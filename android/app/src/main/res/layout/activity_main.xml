@@ -6,17 +6,25 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <View
+            android:id="@+id/dr"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/root"
+            app:layout_constraintEnd_toEndOf="@id/root"
+            app:layout_constraintStart_toStartOf="@+id/root"
+            app:layout_constraintTop_toTopOf="@id/root" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/root"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:alpha=".3"
             android:background="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">

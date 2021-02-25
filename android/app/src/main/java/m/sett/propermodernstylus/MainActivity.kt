@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                         val x = e.x.toDouble() / viewSize.first * targetSize.first
                         val y = e.y.toDouble() / viewSize.second * targetSize.second
                         if (x < 9999 && 0 < x && y < 9999 && 0 < y) {
-                            send("h${x.roundToInt()},${y.roundToInt()}:${if (e.buttonState == MotionEvent.BUTTON_STYLUS_PRIMARY) 1 else 0}") // hover move x,y:buttonPressed
+                            send("n${x.roundToInt()},${y.roundToInt()}:${if (e.buttonState == MotionEvent.BUTTON_STYLUS_PRIMARY) 1 else 0}") // hover move x,y:buttonPressed
                         }
                     }
                 }
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                             val x = e.x.toDouble() / viewSize.first * targetSize.first
                             val y = e.y.toDouble() / viewSize.second * targetSize.second
                             if (x < 9999 && 0 < x && y < 9999 && 0 < y) {
-                                send("m${x.roundToInt()},${y.roundToInt()}:${if (e.buttonState == MotionEvent.BUTTON_STYLUS_PRIMARY) 1 else 0}") // hover move x,y:buttonPressed
+                                send("m${x.roundToInt()},${y.roundToInt()}:${if (e.buttonState == MotionEvent.BUTTON_STYLUS_PRIMARY) 1 else 0}:${(e.pressure * 1024).roundToInt()}") // hover move x,y:buttonPressed
                             }
                         }
                     }

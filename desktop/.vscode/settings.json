@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.compo": "html",
+        "*.html": "html",
+        "tuple": "cpp",
+        "utility": "cpp"
+    }
+}
