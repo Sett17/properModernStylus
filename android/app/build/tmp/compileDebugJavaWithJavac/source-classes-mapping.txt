@@ -1,0 +1,2 @@
+m/sett/propermodernstylus/BuildConfig.java
+ m.sett.propermodernstylus.BuildConfig
