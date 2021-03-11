@@ -74,9 +74,10 @@ void execMsg(char *msg) {
     case 'm':
       sscanf_s(msg + 1, "%d,%d:%d:%d", &x, &y, &buttonPressed, &pressure);
       getPointer(&currPointerInf, PEN_CONTACT, x, y);
-      currPointerInf.penInfo.penMask = PEN_MASK_PRESSURE;
+      currPointerInf.penInfo.penFlags |= (buttonPressed) ? PEN_FLAG_BARREL : 0;
+      currPoinDterInf.penInfo.penMask = PEN_MASK_PRESSURE;
       currPointerInf.penInfo.pressure = pressure;
-      currPointerInf.penInfo.pointerInfo.pointerFlags |= (buttonPressed) ? POINTER_FLAG_SECONDBUTTON : 0;
+      // currPointerInf.penInfo.pointerInfo.pointerFlags |= (buttonPressed) ? POINTER_FLAG_SECONDBUTTON : 0;
       // currPointerInf.penInfo.penFlags |= buttonPressed;
 
       if (!InjectSyntheticPointerInput(SyntheticPointer, &currPointerInf, 1)) {
@@ -88,7 +89,7 @@ void execMsg(char *msg) {
     case 'n':
       sscanf_s(msg + 1, "%d,%d:%d", &x, &y, &buttonPressed);
       getPointer(&currPointerInf, PEN_HOVER, x, y);
-      currPointerInf.penInfo.pointerInfo.pointerFlags |= (buttonPressed) ? POINTER_FLAG_SECONDBUTTON : 0;
+      currPointerInf.penInfo.penFlags |= (buttonPressed) ? PEN_FLAG_BARREL : 0;
       // currPointerInf.penInfo.penFlags |= buttonPressed;
       if (!InjectSyntheticPointerInput(SyntheticPointer, &currPointerInf, 1)) {
         handleError();
